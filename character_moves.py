@@ -9,6 +9,8 @@ top = 560
 right = 780
 bottom = 80
 left = 20
+center_x = (right + bottom) / 2
+center_y = (top + bottom) / 2
 
 def move_top():
     print('Moving top')
@@ -24,9 +26,9 @@ def move_right():
     pass
 
 
-def move_bottom():
+def move_bottom1():
     print('Moving bottom')
-    for x in range(left, right, 5):
+    for x in range(int(center_x), right, 5):
         draw_boy(x, bottom)
     pass
 
@@ -38,21 +40,29 @@ def move_left():
     pass
 
 
+def move_bottom2():
+    print('Moving bottom')
+    for x in range(left, int(center_x), 5):
+        draw_boy(x, bottom)
+    pass
+
+
 def move_rectengle():
     print("Moving rectengle")
+    move_bottom1()
     move_right()
     move_top()
     move_left()
-    move_bottom()
+    move_bottom2()
     pass
 
 
 def move_circle():
     print("Moving circle")
-    r = 200
-    for deg in range(0, 360):
-        x = r * math.cos(math.radians(deg)) + 400
-        y = r * math.sin(math.radians(deg)) + 300
+    r = (top - bottom) / 2
+    for deg in range(90, 360 + 90):
+        x = r * math.cos(math.radians(deg)) + center_x
+        y = r * math.sin(math.radians(deg - 180)) + center_y
         draw_boy(x, y)
     pass
 
@@ -65,8 +75,8 @@ def draw_boy(x: float, y: float):
 
 
 while True:
-    # move_circle()
-    move_rectengle()
+    move_circle()
+    # move_rectengle()
     break
     pass
 
