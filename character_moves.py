@@ -9,8 +9,8 @@ top = 560
 right = 780
 bottom = 80
 left = 20
-center_x = (right + bottom) / 2
-center_y = (top + bottom) / 2
+center_x = (right + bottom) // 2
+center_y = (top + bottom) // 2
 
 def move_top():
     print('Moving top')
@@ -28,7 +28,7 @@ def move_right():
 
 def move_bottom1():
     print('Moving bottom')
-    for x in range(int(center_x), right, 5):
+    for x in range(center_x, right, 5):
         draw_boy(x, bottom)
     pass
 
@@ -42,7 +42,7 @@ def move_left():
 
 def move_bottom2():
     print('Moving bottom')
-    for x in range(left, int(center_x), 5):
+    for x in range(left, center_x, 5):
         draw_boy(x, bottom)
     pass
 
@@ -74,9 +74,37 @@ def draw_boy(x: float, y: float):
     delay(0.01)
 
 
+def move_tri_left_base():
+    for x in range(center_x, left, -5):
+        draw_boy(x, bottom)
+    pass
+
+
+def move_tri_left_side():
+    pass
+
+
+def move_tri_right_side():
+    pass
+
+
+def move_tri_right_base():
+    pass
+
+
+def move_triangle():
+    print("Moving triangle")
+    move_tri_left_base()
+    move_tri_left_side()
+    move_tri_right_side()
+    move_tri_right_base()
+    pass
+
+
 while True:
-    move_rectengle()
-    move_circle()
+    # move_rectengle()
+    move_triangle()
+    # move_circle()
     break
     pass
 
