@@ -81,10 +81,16 @@ def move_tri_left_base():
 
 
 def move_tri_left_side():
+    for x in range(left, center_x, 3):
+        y = ((top - bottom) / (center_x - left)) * (x - left) + bottom
+        draw_boy(x, y)
     pass
 
 
 def move_tri_right_side():
+    for x in range(center_x, right, 3):
+        y = ((top - bottom) / (center_x - right)) * (x - right) + bottom
+        draw_boy(x, y)
     pass
 
 
