@@ -110,10 +110,9 @@ def move_triangle():
 
 
 while True:
-    # move_rectengle()
+    move_rectengle()
     move_triangle()
-    # move_circle()
-    break
+    move_circle()
     pass
 
 close_canvas()
