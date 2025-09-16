@@ -95,6 +95,8 @@ def move_tri_right_side():
 
 
 def move_tri_right_base():
+    for x in range(right, center_x, -5):
+        draw_boy(x, bottom)
     pass
 
 
