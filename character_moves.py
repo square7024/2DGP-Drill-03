@@ -75,8 +75,8 @@ def draw_boy(x: float, y: float):
 
 
 while True:
+    move_rectengle()
     move_circle()
-    # move_rectengle()
     break
     pass
 
